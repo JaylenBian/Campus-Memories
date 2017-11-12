@@ -1,7 +1,96 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5VU-tE-bdS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--GuideVC-->
+        <scene sceneID="YxO-YG-l08">
+            <objects>
+                <viewController id="5VU-tE-bdS" customClass="MCGuideVC" customModule="CampusMemories" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UUM-WU-WSz"/>
+                        <viewControllerLayoutGuide type="bottom" id="iBQ-7c-OTO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fvs-vv-VYK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u4N-eU-MGm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oaP-oK-aIv">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5VU-tE-bdS" id="v8w-bf-kIf"/>
+                                    <outlet property="delegate" destination="5VU-tE-bdS" id="a5B-xj-5Li"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNA-bb-hgd">
+                                <rect key="frame" x="16" y="20" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4np-iu-5zK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="跳过">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa0-fk-fyL">
+                                <rect key="frame" x="324" y="20" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4RI-xB-mst"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="QtX-DP-14A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="继续">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="2q8-xl-nlL">
+                                <rect key="frame" x="16" y="620" width="343" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iBQ-7c-OTO" firstAttribute="top" secondItem="2q8-xl-nlL" secondAttribute="bottom" constant="10" id="FPn-dX-wSW"/>
+                            <constraint firstAttribute="trailing" secondItem="u4N-eU-MGm" secondAttribute="trailing" id="KSG-dD-CmX"/>
+                            <constraint firstItem="iBQ-7c-OTO" firstAttribute="top" secondItem="u4N-eU-MGm" secondAttribute="bottom" id="N6a-Ln-dnX"/>
+                            <constraint firstItem="u4N-eU-MGm" firstAttribute="leading" secondItem="fvs-vv-VYK" secondAttribute="leading" id="YU0-Ys-Czz"/>
+                            <constraint firstAttribute="trailing" secondItem="2q8-xl-nlL" secondAttribute="trailing" constant="16" id="h2B-NT-e1F"/>
+                            <constraint firstAttribute="trailing" secondItem="Aa0-fk-fyL" secondAttribute="trailing" constant="16" id="ht0-QR-EPI"/>
+                            <constraint firstItem="2q8-xl-nlL" firstAttribute="leading" secondItem="fvs-vv-VYK" secondAttribute="leading" constant="16" id="nCk-kE-g0z"/>
+                            <constraint firstItem="u4N-eU-MGm" firstAttribute="top" secondItem="fvs-vv-VYK" secondAttribute="top" id="pJP-c1-EGe"/>
+                            <constraint firstItem="KNA-bb-hgd" firstAttribute="leading" secondItem="fvs-vv-VYK" secondAttribute="leading" constant="16" id="q37-KG-Twb"/>
+                            <constraint firstItem="Aa0-fk-fyL" firstAttribute="top" secondItem="UUM-WU-WSz" secondAttribute="bottom" id="r1L-QX-MuH"/>
+                            <constraint firstItem="KNA-bb-hgd" firstAttribute="top" secondItem="UUM-WU-WSz" secondAttribute="bottom" id="tA2-Ki-xbE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="u4N-eU-MGm" id="KFD-6F-UUb"/>
+                        <outlet property="continueButton" destination="Aa0-fk-fyL" id="WDO-KN-ixv"/>
+                        <outlet property="continueButtonTop" destination="r1L-QX-MuH" id="cxp-6B-zvm"/>
+                        <outlet property="pageControl" destination="2q8-xl-nlL" id="Vu3-Lr-2j9"/>
+                        <outlet property="pageControlBottom" destination="FPn-dX-wSW" id="t3b-vq-u1f"/>
+                        <outlet property="skipButton" destination="KNA-bb-hgd" id="X2V-X6-6wN"/>
+                        <outlet property="skipButtonTop" destination="tA2-Ki-xbE" id="bBs-Cv-Kbd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JvO-L6-h0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="141"/>
+        </scene>
+    </scenes>
 </document>
