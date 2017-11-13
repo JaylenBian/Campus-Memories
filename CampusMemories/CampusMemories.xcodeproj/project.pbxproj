@@ -25,6 +25,12 @@
 		E754538A1FB819B70082DA13 /* MCGuidePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75453881FB819B70082DA13 /* MCGuidePageCell.xib */; };
 		E754538D1FB81D500082DA13 /* MCGuideDoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754538B1FB81D500082DA13 /* MCGuideDoneCell.swift */; };
 		E754538E1FB81D500082DA13 /* MCGuideDoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E754538C1FB81D500082DA13 /* MCGuideDoneCell.xib */; };
+		E75453901FB82AD60082DA13 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754538F1FB82AD60082DA13 /* MCTextField.swift */; };
+		E75453921FB848F30082DA13 /* MCLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75453911FB848F30082DA13 /* MCLoginVC.swift */; };
+		E75453951FB84B390082DA13 /* MCLoginMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75453931FB84B390082DA13 /* MCLoginMainCell.swift */; };
+		E75453961FB84B390082DA13 /* MCLoginMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75453941FB84B390082DA13 /* MCLoginMainCell.xib */; };
+		E75453991FB84B7B0082DA13 /* MCLoginRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75453971FB84B7B0082DA13 /* MCLoginRegisterCell.swift */; };
+		E754539A1FB84B7B0082DA13 /* MCLoginRegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75453981FB84B7B0082DA13 /* MCLoginRegisterCell.xib */; };
 		E7F86EEC1FB7F92100ECF833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F86EEB1FB7F92100ECF833 /* AppDelegate.swift */; };
 		E7F86EF41FB7F92100ECF833 /* CampusMemories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F86EF21FB7F92100ECF833 /* CampusMemories.xcdatamodeld */; };
 		E7F86EF61FB7F92100ECF833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F86EF51FB7F92100ECF833 /* Assets.xcassets */; };
@@ -69,6 +75,12 @@
 		E75453881FB819B70082DA13 /* MCGuidePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCGuidePageCell.xib; sourceTree = "<group>"; };
 		E754538B1FB81D500082DA13 /* MCGuideDoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCGuideDoneCell.swift; sourceTree = "<group>"; };
 		E754538C1FB81D500082DA13 /* MCGuideDoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCGuideDoneCell.xib; sourceTree = "<group>"; };
+		E754538F1FB82AD60082DA13 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
+		E75453911FB848F30082DA13 /* MCLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLoginVC.swift; sourceTree = "<group>"; };
+		E75453931FB84B390082DA13 /* MCLoginMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLoginMainCell.swift; sourceTree = "<group>"; };
+		E75453941FB84B390082DA13 /* MCLoginMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCLoginMainCell.xib; sourceTree = "<group>"; };
+		E75453971FB84B7B0082DA13 /* MCLoginRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLoginRegisterCell.swift; sourceTree = "<group>"; };
+		E75453981FB84B7B0082DA13 /* MCLoginRegisterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCLoginRegisterCell.xib; sourceTree = "<group>"; };
 		E7F86EE81FB7F92100ECF833 /* CampusMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F86EEB1FB7F92100ECF833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F86EF31FB7F92100ECF833 /* CampusMemories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampusMemories.xcdatamodel; sourceTree = "<group>"; };
@@ -367,6 +379,7 @@
 		E75453691FB7FF030082DA13 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E75453911FB848F30082DA13 /* MCLoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -374,6 +387,11 @@
 		E754536A1FB7FF030082DA13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E754538F1FB82AD60082DA13 /* MCTextField.swift */,
+				E75453931FB84B390082DA13 /* MCLoginMainCell.swift */,
+				E75453941FB84B390082DA13 /* MCLoginMainCell.xib */,
+				E75453971FB84B7B0082DA13 /* MCLoginRegisterCell.swift */,
+				E75453981FB84B7B0082DA13 /* MCLoginRegisterCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -542,6 +560,7 @@
 			files = (
 				E754536E1FB7FF280082DA13 /* Login.storyboard in Resources */,
 				E75453701FB7FF330082DA13 /* Main.storyboard in Resources */,
+				E75453961FB84B390082DA13 /* MCLoginMainCell.xib in Resources */,
 				E7F86EF91FB7F92100ECF833 /* LaunchScreen.storyboard in Resources */,
 				E75453761FB7FF490082DA13 /* Update.storyboard in Resources */,
 				E754538E1FB81D500082DA13 /* MCGuideDoneCell.xib in Resources */,
@@ -550,6 +569,7 @@
 				E75453781FB7FF540082DA13 /* Profile.storyboard in Resources */,
 				E754538A1FB819B70082DA13 /* MCGuidePageCell.xib in Resources */,
 				E75453741FB7FF430082DA13 /* Discover.storyboard in Resources */,
+				E754539A1FB84B7B0082DA13 /* MCLoginRegisterCell.xib in Resources */,
 				E754536C1FB7FF190082DA13 /* Guide.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,16 +596,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E754537A1FB80AF20082DA13 /* MCMainTVC.swift in Sources */,
+				E75453901FB82AD60082DA13 /* MCTextField.swift in Sources */,
 				E75453841FB816ED0082DA13 /* MCGuideVC.swift in Sources */,
 				E7F86EF41FB7F92100ECF833 /* CampusMemories.xcdatamodeld in Sources */,
+				E75453991FB84B7B0082DA13 /* MCLoginRegisterCell.swift in Sources */,
 				E754537C1FB80C050082DA13 /* MCMainNVC.swift in Sources */,
 				E7F86EEC1FB7F92100ECF833 /* AppDelegate.swift in Sources */,
+				E75453951FB84B390082DA13 /* MCLoginMainCell.swift in Sources */,
 				E75453891FB819B70082DA13 /* MCGuidePageCell.swift in Sources */,
 				E75453821FB80CDC0082DA13 /* GlobalMacro+URL.swift in Sources */,
 				E75453861FB817270082DA13 /* MCPageItem.swift in Sources */,
 				E754537E1FB80C490082DA13 /* UIColor+Extension.swift in Sources */,
 				E75453801FB80CC30082DA13 /* GlobalMacro+Frame.swift in Sources */,
 				E754538D1FB81D500082DA13 /* MCGuideDoneCell.swift in Sources */,
+				E75453921FB848F30082DA13 /* MCLoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
