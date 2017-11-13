@@ -31,6 +31,9 @@
 		E75453961FB84B390082DA13 /* MCLoginMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75453941FB84B390082DA13 /* MCLoginMainCell.xib */; };
 		E75453991FB84B7B0082DA13 /* MCLoginRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75453971FB84B7B0082DA13 /* MCLoginRegisterCell.swift */; };
 		E754539A1FB84B7B0082DA13 /* MCLoginRegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75453981FB84B7B0082DA13 /* MCLoginRegisterCell.xib */; };
+		E754539C1FB923100082DA13 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E754539B1FB9230F0082DA13 /* README.md */; };
+		E754539E1FB95F790082DA13 /* MCProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754539D1FB95F790082DA13 /* MCProfileManager.swift */; };
+		E75453A01FB962740082DA13 /* MCUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754539F1FB962740082DA13 /* MCUserProfile.swift */; };
 		E7F86EEC1FB7F92100ECF833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F86EEB1FB7F92100ECF833 /* AppDelegate.swift */; };
 		E7F86EF41FB7F92100ECF833 /* CampusMemories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F86EF21FB7F92100ECF833 /* CampusMemories.xcdatamodeld */; };
 		E7F86EF61FB7F92100ECF833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F86EF51FB7F92100ECF833 /* Assets.xcassets */; };
@@ -81,6 +84,9 @@
 		E75453941FB84B390082DA13 /* MCLoginMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCLoginMainCell.xib; sourceTree = "<group>"; };
 		E75453971FB84B7B0082DA13 /* MCLoginRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLoginRegisterCell.swift; sourceTree = "<group>"; };
 		E75453981FB84B7B0082DA13 /* MCLoginRegisterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCLoginRegisterCell.xib; sourceTree = "<group>"; };
+		E754539B1FB9230F0082DA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		E754539D1FB95F790082DA13 /* MCProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCProfileManager.swift; sourceTree = "<group>"; };
+		E754539F1FB962740082DA13 /* MCUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCUserProfile.swift; sourceTree = "<group>"; };
 		E7F86EE81FB7F92100ECF833 /* CampusMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F86EEB1FB7F92100ECF833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F86EF31FB7F92100ECF833 /* CampusMemories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampusMemories.xcdatamodel; sourceTree = "<group>"; };
@@ -232,6 +238,8 @@
 		E75453561FB7FEA00082DA13 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E754539D1FB95F790082DA13 /* MCProfileManager.swift */,
+				E754539F1FB962740082DA13 /* MCUserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +427,7 @@
 		E7F86EEA1FB7F92100ECF833 /* CampusMemories */ = {
 			isa = PBXGroup;
 			children = (
+				E754539B1FB9230F0082DA13 /* README.md */,
 				E75453491FB7FDBF0082DA13 /* Classes */,
 				E754534A1FB7FDC50082DA13 /* Tools */,
 				E754534C1FB7FDD00082DA13 /* Extensions */,
@@ -568,6 +577,7 @@
 				E7F86EF61FB7F92100ECF833 /* Assets.xcassets in Resources */,
 				E75453781FB7FF540082DA13 /* Profile.storyboard in Resources */,
 				E754538A1FB819B70082DA13 /* MCGuidePageCell.xib in Resources */,
+				E754539C1FB923100082DA13 /* README.md in Resources */,
 				E75453741FB7FF430082DA13 /* Discover.storyboard in Resources */,
 				E754539A1FB84B7B0082DA13 /* MCLoginRegisterCell.xib in Resources */,
 				E754536C1FB7FF190082DA13 /* Guide.storyboard in Resources */,
@@ -597,6 +607,7 @@
 			files = (
 				E754537A1FB80AF20082DA13 /* MCMainTVC.swift in Sources */,
 				E75453901FB82AD60082DA13 /* MCTextField.swift in Sources */,
+				E75453A01FB962740082DA13 /* MCUserProfile.swift in Sources */,
 				E75453841FB816ED0082DA13 /* MCGuideVC.swift in Sources */,
 				E7F86EF41FB7F92100ECF833 /* CampusMemories.xcdatamodeld in Sources */,
 				E75453991FB84B7B0082DA13 /* MCLoginRegisterCell.swift in Sources */,
@@ -608,6 +619,7 @@
 				E75453861FB817270082DA13 /* MCPageItem.swift in Sources */,
 				E754537E1FB80C490082DA13 /* UIColor+Extension.swift in Sources */,
 				E75453801FB80CC30082DA13 /* GlobalMacro+Frame.swift in Sources */,
+				E754539E1FB95F790082DA13 /* MCProfileManager.swift in Sources */,
 				E754538D1FB81D500082DA13 /* MCGuideDoneCell.swift in Sources */,
 				E75453921FB848F30082DA13 /* MCLoginVC.swift in Sources */,
 			);
