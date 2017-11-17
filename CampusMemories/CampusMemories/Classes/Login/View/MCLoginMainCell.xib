@@ -70,15 +70,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有账号？" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCd-WD-zBP">
+                                <rect key="frame" x="107.5" y="619" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rzN-SK-kzV"/>
+                                    <constraint firstAttribute="width" constant="100" id="wdr-Ut-yNn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYz-pj-OT1">
+                                <rect key="frame" x="215.5" y="619" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6aF-eI-Oda"/>
+                                    <constraint firstAttribute="width" constant="70" id="rOd-vf-lWf"/>
+                                </constraints>
+                                <state key="normal" title="立即注册"/>
+                                <connections>
+                                    <action selector="registeAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="O8T-tg-yTC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HYz-pj-OT1" secondAttribute="bottom" constant="8" id="3qa-2T-bAk"/>
                             <constraint firstItem="xQz-FA-Tki" firstAttribute="centerX" secondItem="9W6-QP-FOH" secondAttribute="centerX" id="4sC-gj-Hf4"/>
                             <constraint firstItem="0lr-8K-NzB" firstAttribute="width" secondItem="RK2-Pj-QDM" secondAttribute="width" id="54G-Gy-Dh0"/>
+                            <constraint firstItem="xCd-WD-zBP" firstAttribute="centerX" secondItem="9W6-QP-FOH" secondAttribute="centerX" constant="-30" id="7Wh-gK-5Nl"/>
                             <constraint firstItem="RK2-Pj-QDM" firstAttribute="centerX" secondItem="9W6-QP-FOH" secondAttribute="centerX" id="FVi-Pe-yOg"/>
                             <constraint firstItem="RK2-Pj-QDM" firstAttribute="top" secondItem="xQz-FA-Tki" secondAttribute="bottom" constant="50" id="NwS-78-Aw3"/>
+                            <constraint firstAttribute="bottom" secondItem="xCd-WD-zBP" secondAttribute="bottom" constant="8" id="VVb-2W-r8h"/>
                             <constraint firstItem="RK2-Pj-QDM" firstAttribute="centerY" secondItem="9W6-QP-FOH" secondAttribute="centerY" id="dWa-El-LTy"/>
                             <constraint firstItem="RK2-Pj-QDM" firstAttribute="width" secondItem="9W6-QP-FOH" secondAttribute="width" multiplier="0.7" id="i3l-HG-hpT"/>
                             <constraint firstItem="0lr-8K-NzB" firstAttribute="top" secondItem="RK2-Pj-QDM" secondAttribute="bottom" constant="20" id="jjF-rd-s26"/>
+                            <constraint firstItem="HYz-pj-OT1" firstAttribute="leading" secondItem="xCd-WD-zBP" secondAttribute="trailing" constant="8" id="nIb-C1-pAf"/>
                             <constraint firstItem="dcf-3U-S8Y" firstAttribute="top" secondItem="0lr-8K-NzB" secondAttribute="bottom" constant="20" id="p6d-N3-rD1"/>
                             <constraint firstItem="dcf-3U-S8Y" firstAttribute="width" secondItem="RK2-Pj-QDM" secondAttribute="width" id="pyH-pM-wUB"/>
                             <constraint firstItem="dcf-3U-S8Y" firstAttribute="centerX" secondItem="9W6-QP-FOH" secondAttribute="centerX" id="qU9-a8-Sa1"/>

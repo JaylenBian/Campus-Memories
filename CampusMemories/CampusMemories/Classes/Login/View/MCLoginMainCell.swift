@@ -16,6 +16,8 @@ class MCLoginMainCell: UICollectionViewCell {
     @IBOutlet weak var passwordField: MCTextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    weak var delegate: MCLoginMainCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -44,4 +46,13 @@ class MCLoginMainCell: UICollectionViewCell {
         }
     }
     
+    @IBAction func registeAction(_ sender: UIButton) {
+        self.delegate?.loginMainCell(self, scrollTo: 1)
+    }
+    
+}
+
+protocol MCLoginMainCellDelegate: AnyObject {
+    
+    func loginMainCell(_ loginMainCell: MCLoginMainCell, scrollTo page: Int)
 }

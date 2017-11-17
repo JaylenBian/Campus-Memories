@@ -91,6 +91,7 @@ extension MCLoginVC {
         
         if indexPath.row == 0 {
             let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: loginMainCell, for: indexPath) as! MCLoginMainCell
+            cell.delegate = self
             loginMainCellPage = cell
             
             return cell
@@ -107,6 +108,15 @@ extension MCLoginVC {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+}
+
+extension MCLoginVC: MCLoginMainCellDelegate {
+    
+    func loginMainCell(_ loginMainCell: MCLoginMainCell, scrollTo page: Int) {
+        let indexPath = IndexPath(row: page, section: 0)
+        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
 }
