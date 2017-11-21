@@ -6,6 +6,10 @@
 //  Copyright © 2017年 Minecode. All rights reserved.
 //
 
+// 2017/11/17
+// FIXME: 界面重构需求
+// 备注： 将学号和密码文本框重构至同一容器View中
+
 import UIKit
 
 class MCLoginMainCell: UICollectionViewCell {
@@ -23,7 +27,7 @@ class MCLoginMainCell: UICollectionViewCell {
         // Initialization code
         
         setupTfImage()
-        setTextOffset()
+        loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
     }
     
     fileprivate func setupTfImage() {
@@ -32,10 +36,6 @@ class MCLoginMainCell: UICollectionViewCell {
         
         passwordField.leftView = UIImageView(image: UIImage(named: "login_Password")?.withRenderingMode(.alwaysOriginal))
         passwordField.leftViewMode = .always
-    }
-    
-    fileprivate func setTextOffset() {
-        
     }
     
     func resignAllTF() {
@@ -50,9 +50,45 @@ class MCLoginMainCell: UICollectionViewCell {
         self.delegate?.loginMainCell(self, scrollTo: 1)
     }
     
+    @objc func loginAction() {
+        let nickname = nicknameField.text
+        if nickname == "" {
+            shakeTextFiled(with: nicknameField)
+            return
+        }
+        
+        let password = passwordField.text
+        if password == "" {
+            shakeTextFiled(with: passwordField)
+            return
+        }
+        
+        self.delegate?.loginMainCellShouldLogin(self)
+    }
+    
+    // 抖动特效
+    fileprivate func shakeTextFiled(with textField: UITextField) {
+        // 设置关键帧动画
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        // 设置动画周期
+        animation.duration = 0.05
+        animation.repeatCount = 5
+        // 抖动幅度
+        animation.values = [0, -10, 10, 0]
+        // 恢复原样
+        animation.autoreverses = true
+        // 设置抖动中心，并开始动画
+        textField.layer.add(animation, forKey: "rotation.x")
+    }
+    
 }
 
+// 登录界面Nib的代理方法，由登录控制器实现
 protocol MCLoginMainCellDelegate: AnyObject {
     
+    // 跳转到登录界面的某个页面
     func loginMainCell(_ loginMainCell: MCLoginMainCell, scrollTo page: Int)
+    // 登录按钮点击响应操作
+    func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell)
+    
 }

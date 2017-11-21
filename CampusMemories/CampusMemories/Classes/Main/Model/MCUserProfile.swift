@@ -6,6 +6,10 @@
 //  Copyright © 2017年 Minecode. All rights reserved.
 //
 
+// 2017/11/17
+// FIXME: 实现NSCopying方法
+// 备注: (null)
+
 import UIKit
 
 class MCUserProfile: NSObject {

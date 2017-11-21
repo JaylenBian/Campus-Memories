@@ -26,22 +26,26 @@ class MCLoginVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         addCollectionViewGesture()
     }
     
+    // 注册集合Cell
     fileprivate func registeCell() {
         self.collectionView.register(UINib(nibName: "MCLoginMainCell", bundle: nil), forCellWithReuseIdentifier: loginMainCell)
         self.collectionView.register(UINib(nibName: "MCLoginRegisterCell", bundle: nil), forCellWithReuseIdentifier: loginRegisterCell)
     }
     
+    // 添加键盘消息观察者，在键盘弹出收回时调整窗口
     fileprivate func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    // 对CollectionView添加手势，收回键盘
     fileprivate func addCollectionViewGesture() {
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(resignTextField))
         
         self.collectionView.addGestureRecognizer(tapGes)
     }
     
+    // 键盘弹出响应方法
     @objc func keyboardShow() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             // 设置界面frame
@@ -52,6 +56,7 @@ class MCLoginVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }, completion: nil)
     }
     
+    // 键盘收回相应方法
     @objc func keyboardHide() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
             // 设置界面frame
@@ -61,10 +66,12 @@ class MCLoginVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }, completion: nil)
     }
     
+    // 响应滚动CollectionView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         resignTextField()
     }
     
+    // 取消文本框的第一响应者
     @objc fileprivate func resignTextField() {
         guard let loginMainCellPage = self.loginMainCellPage else {return}
         loginMainCellPage.resignAllTF()
@@ -73,7 +80,7 @@ class MCLoginVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
         loginRegisterCellPage.resignAllTF()
     }
-
+    
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource & UICollectionViewFlowLayout implemention
@@ -117,6 +124,10 @@ extension MCLoginVC: MCLoginMainCellDelegate {
     func loginMainCell(_ loginMainCell: MCLoginMainCell, scrollTo page: Int) {
         let indexPath = IndexPath(row: page, section: 0)
         self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell) {
+        print("Login Action")
     }
     
 }
