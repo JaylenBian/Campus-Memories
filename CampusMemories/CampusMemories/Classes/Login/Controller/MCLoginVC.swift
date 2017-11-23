@@ -127,7 +127,7 @@ extension MCLoginVC: MCLoginMainCellDelegate {
     }
     
     func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell) {
-        print("Login Action")
+        
     }
     
 }

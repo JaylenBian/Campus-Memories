@@ -8,5 +8,13 @@
 
 import Foundation
 
-// MARK: - URL Defination
+// MARK: - URL Defination --------------
 
+// MARK: - 账号数据拉取 ------------------
+
+// 登录接口
+// 示例：http://gloomyhand.xin:8001/index/login?name=james&pass=james
+let api_login = "http://gloomyhand.xin:8001/index/login?"
+
+
+// MARK: - 动态拉取 ----------------------
