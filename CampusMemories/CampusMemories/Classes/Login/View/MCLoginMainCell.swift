@@ -63,7 +63,9 @@ class MCLoginMainCell: UICollectionViewCell {
             return
         }
         
-        self.delegate?.loginMainCellShouldLogin(self)
+        let profile: MCLoginProfileItem = MCLoginProfileItem(nickName: nickname!, passWord: password!)
+        
+        self.delegate?.loginMainCellShouldLogin(self, with: profile)
     }
     
     // 抖动特效
@@ -89,6 +91,6 @@ protocol MCLoginMainCellDelegate: AnyObject {
     // 跳转到登录界面的某个页面
     func loginMainCell(_ loginMainCell: MCLoginMainCell, scrollTo page: Int)
     // 登录按钮点击响应操作
-    func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell)
+    func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell, with profile: MCLoginProfileItem)
     
 }

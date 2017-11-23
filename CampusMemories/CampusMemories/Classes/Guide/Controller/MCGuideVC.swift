@@ -106,7 +106,6 @@ class MCGuideVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         })
     }
     
-    @available(iOS 8.0, *)
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         let indexPath = IndexPath(item: pageControl.currentPage, section: 0)
         

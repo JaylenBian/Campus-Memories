@@ -13,17 +13,13 @@ class MCMainTVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showMainController()
+        
         if isFirstRun() {
             showGuideController()
         }
-        else if isLoggedIn() {
-            
-        }
-        else {
-            addChildVc(storyName: "Home", title: "首页")
-            addChildVc(storyName: "Discover", title: "发现")
-            addChildVc(storyName: "Update", title: "动态")
-            addChildVc(storyName: "Profile", title: "个人")
+        else if !isLoggedIn() {
+            showLoginController()
         }
     }
     
@@ -51,6 +47,7 @@ extension MCMainTVC {
     
     func isFirstRun() -> Bool {
         return true
+//        return false
     }
     
     func isLoggedIn() -> Bool {
@@ -76,9 +73,22 @@ extension MCMainTVC {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginVC = storyboard.instantiateInitialViewController() as! MCLoginVC
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.01) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.0001) {
             self.present(loginVC, animated: false, completion: nil)
         }
+    }
+    
+    func finishLoginController() {
+        dismiss(animated: true, completion: nil)
+        
+        // FIXME: 实现首页数据的更新
+    }
+    
+    @objc func showMainController() {
+        addChildVc(storyName: "Home", title: "首页")
+        addChildVc(storyName: "Discover", title: "发现")
+        addChildVc(storyName: "Update", title: "动态")
+        addChildVc(storyName: "Profile", title: "个人")
     }
     
 }

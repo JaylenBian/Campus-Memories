@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class MCLoginVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -20,7 +23,7 @@ class MCLoginVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         registeCell()
         observeKeyboardNotifications()
         addCollectionViewGesture()
@@ -126,8 +129,41 @@ extension MCLoginVC: MCLoginMainCellDelegate {
         self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
-    func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell) {
+    func loginMainCellShouldLogin(_ loninMainCell: MCLoginMainCell, with profile: MCLoginProfileItem) {
+        SVProgressHUD.show(withStatus: "登录中")
         
+        let url = api_login + "name=\(profile.nickname)&pass=\(profile.password)"
+        
+        Alamofire.request(url).responseData { (response) in
+            let json = JSON(response.result.value!)
+            
+            let resultCode = json["code"].stringValue
+            
+            switch resultCode {
+            case "10000":
+                self.loginSuccessHandler()
+            default:
+                self.loginFailedHandler()
+            }
+            
+        }
+        
+    }
+    
+}
+
+// 登录处理
+extension MCLoginVC {
+    
+    fileprivate func loginFailedHandler() {
+        SVProgressHUD.showError(withStatus: "登录失败")
+    }
+    
+    fileprivate func loginSuccessHandler() {
+        SVProgressHUD.showSuccess(withStatus: "登陆成功")
+        
+        weak var tvc = UIApplication.shared.keyWindow?.rootViewController as? MCMainTVC
+        tvc?.finishLoginController()
     }
     
 }

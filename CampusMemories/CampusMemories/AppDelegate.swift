@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tvc = MCMainTVC()
         window?.rootViewController = tvc
+        
+        SVProgressHUD.setMinimumDismissTimeInterval(1.5)
         
         return true
     }
