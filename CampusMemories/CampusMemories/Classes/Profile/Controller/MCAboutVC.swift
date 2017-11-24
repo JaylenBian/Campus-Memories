@@ -20,6 +20,7 @@ class MCAboutVC: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "关于"
+        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     

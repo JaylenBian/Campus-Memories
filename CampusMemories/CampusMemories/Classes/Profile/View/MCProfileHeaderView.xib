@@ -17,42 +17,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TPC-7l-ugx">
-                    <rect key="frame" x="16" y="8" width="64" height="64"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_face_ph" translatesAutoresizingMaskIntoConstraints="NO" id="TPC-7l-ugx">
+                    <rect key="frame" x="16" y="-28" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="100" id="brP-mG-hff"/>
                         <constraint firstAttribute="height" secondItem="TPC-7l-ugx" secondAttribute="width" id="yX7-ie-Hdd"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOH-7h-lxA">
-                    <rect key="frame" x="92" y="8" width="82" height="32"/>
+                    <rect key="frame" x="128" y="8" width="82" height="32"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-sb-GS8">
-                    <rect key="frame" x="182" y="8" width="32" height="32"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_sex_male" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-sb-GS8">
+                    <rect key="frame" x="218" y="8" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" secondItem="CCY-sb-GS8" secondAttribute="width" id="kdY-4X-5zs"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlZ-gq-EIH">
-                    <rect key="frame" x="92" y="52.5" width="49" height="19.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉丝数: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlZ-gq-EIH">
+                    <rect key="frame" x="128" y="52.5" width="84.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="sOH-7h-lxA" firstAttribute="height" secondItem="TPC-7l-ugx" secondAttribute="height" multiplier="0.5" id="1sM-xO-0V7"/>
                 <constraint firstItem="xlZ-gq-EIH" firstAttribute="bottom" secondItem="TPC-7l-ugx" secondAttribute="bottom" id="2FF-jg-z4d"/>
                 <constraint firstItem="xlZ-gq-EIH" firstAttribute="leading" secondItem="sOH-7h-lxA" secondAttribute="leading" id="9yb-w4-LTB"/>
                 <constraint firstAttribute="bottom" secondItem="TPC-7l-ugx" secondAttribute="bottom" constant="8" id="BcN-xx-dDW"/>
-                <constraint firstItem="TPC-7l-ugx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="HxM-Hf-alS"/>
+                <constraint firstItem="sOH-7h-lxA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="Idz-MD-9sp"/>
                 <constraint firstItem="sOH-7h-lxA" firstAttribute="leading" secondItem="TPC-7l-ugx" secondAttribute="trailing" constant="12" id="bV2-zg-cl8"/>
+                <constraint firstItem="sOH-7h-lxA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="cU3-6O-siD"/>
                 <constraint firstItem="CCY-sb-GS8" firstAttribute="leading" secondItem="sOH-7h-lxA" secondAttribute="trailing" constant="8" id="foC-5z-b70"/>
                 <constraint firstItem="TPC-7l-ugx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="gWf-oX-vME"/>
-                <constraint firstItem="sOH-7h-lxA" firstAttribute="top" secondItem="TPC-7l-ugx" secondAttribute="top" id="iNd-69-PuZ"/>
                 <constraint firstItem="CCY-sb-GS8" firstAttribute="height" secondItem="sOH-7h-lxA" secondAttribute="height" id="m5e-dz-Y51"/>
                 <constraint firstItem="CCY-sb-GS8" firstAttribute="top" secondItem="sOH-7h-lxA" secondAttribute="top" id="zFb-1l-DZD"/>
             </constraints>
@@ -66,4 +72,8 @@
             <point key="canvasLocation" x="-335" y="52"/>
         </view>
     </objects>
+    <resources>
+        <image name="profile_face_ph" width="120" height="120"/>
+        <image name="profile_sex_male" width="32" height="32"/>
+    </resources>
 </document>

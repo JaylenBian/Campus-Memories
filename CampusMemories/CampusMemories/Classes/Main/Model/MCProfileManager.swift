@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MCProfileManager {
     
     private var userProfile: MCUserProfile?
     
     // 使用单例模式管理用户信息
-    static let sharedInstance = MCProfileManager.init()
+    static let shared = MCProfileManager.init()
     
     private init() {
         
@@ -29,6 +30,14 @@ class MCProfileManager {
 //
 //    }
     
+    func updateUserProfile(json: JSON) {
+        userProfile = MCUserProfile(json: json)
+        // 发送消息通知所有vc
+        DispatchQueue.main.async {
+            let notificationName = Notification.Name(rawValue: "UserProfileChanged")
+            NotificationCenter.default.post(name: notificationName, object: self)
+        }
+    }
     
     // 注册用户接口
     func registerUser(with userProfile: MCUserProfile) -> Bool {

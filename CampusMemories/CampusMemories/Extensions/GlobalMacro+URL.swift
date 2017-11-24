@@ -18,3 +18,7 @@ let api_login = "http://gloomyhand.xin:8001/index/login?"
 
 
 // MARK: - 动态拉取 ----------------------
+
+
+// MARK: - OpenAPI
+let api_qq = "mqq://im/chat?chat_type=wpa&uin=735098742&version=1&src_type=web"

@@ -30,27 +30,32 @@ class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     lazy var headerImage: UIImageView = {
         let image = UIImage(named: "profile_placeholder")
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: heightOffset, width: view.frame.width, height: heightOffset)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: heightOffset)
         return imageView
     }()
     
+    weak var profileHeaderCell: MCProfileHeaderView?
+    
     lazy var heightOffset = {
-        view.frame.height*0.3
+        view.frame.height*0.25
     }()
     
     let kCellMargin: CGFloat = 20
+    let kProfileHeaderHeight: CGFloat = 80
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(tableView)
 //        registerCell()
-    
+        addNotification()
+        reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        reloadData()
         self.navigationItem.title = "个人"
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -58,6 +63,11 @@ class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+    }
+    
+    fileprivate func addNotification() {
+        let notificationName = Notification.Name(rawValue: "UserProfileChanged")
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: notificationName, object: nil)
     }
     
     fileprivate func registerCell() {
@@ -68,6 +78,12 @@ class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         let yOffset = scrollView.contentOffset.y
         
+        if yOffset > -heightOffset-20 {
+            scrollView.setContentOffset(CGPoint.init(x: scrollView.contentOffset.x, y: -heightOffset-20), animated: false)
+            return
+        }
+        
+        // 设置图片跟随拉动
         if yOffset < -heightOffset {
             var currentFrame = headerImage.frame
             currentFrame.origin.y = yOffset
@@ -81,8 +97,20 @@ class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
     }
+    
+    // 数据更新时的处理方式
+    @objc func reloadData() {
+        // 更新profileHeaderCell
+        profileHeaderCell?.nicknameLabel.text = MCProfileManager.shared.loadUserProfile()?.nick
+        profileHeaderCell?.fansLabel.text = "粉丝数: \(MCProfileManager.shared.loadUserProfile()?.fanscount ?? 0)"
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
+// UITableViewDelegate & UITableViewDataSource Implemention
 extension MCProfileVC {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -131,14 +159,16 @@ extension MCProfileVC {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            return UIView()
+            let view = Bundle.main.loadNibNamed("MCProfileHeaderView", owner: self, options: nil)?.last as! MCProfileHeaderView
+            profileHeaderCell = view
+            return view
         }
         return UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: kCellMargin))
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 0
+            return kProfileHeaderHeight
         }
         return kCellMargin
     }

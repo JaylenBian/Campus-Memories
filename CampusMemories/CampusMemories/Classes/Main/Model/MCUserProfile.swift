@@ -11,8 +11,9 @@
 // 备注: (null)
 
 import UIKit
+import SwiftyJSON
 
-class MCUserProfile: NSObject {
+@objcMembers class MCUserProfile: NSObject {
     
     var id: Int?
     var name: String?
@@ -31,14 +32,16 @@ class MCUserProfile: NSObject {
     var face: String?
     var sid: String?
     
-    init(dict: [String: Any]) {
+    init(json: JSON) {
         super.init()
         
-        self.setValuesForKeys(dict)
+        for (index, object):(String, JSON) in json {
+            setValue(object.rawValue, forKey: index)
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        // 占位
+//        print("UndefinedKey: \(key) for Value:\(value)")
     }
     
 }

@@ -46,12 +46,13 @@ class MCMainTVC: UITabBarController {
 extension MCMainTVC {
     
     func isFirstRun() -> Bool {
-        return true
-//        return false
+//        return true
+        return false
     }
     
     func isLoggedIn() -> Bool {
         return false
+//        return true
     }
     
     @objc func showGuideController() {
@@ -81,7 +82,11 @@ extension MCMainTVC {
     func finishLoginController() {
         dismiss(animated: true, completion: nil)
         
-        // FIXME: 实现首页数据的更新
+        // 发送消息通知刷新
+        DispatchQueue.main.async {
+            let notificationName = Notification.Name(rawValue: "UserProfileChanged")
+            NotificationCenter.default.post(name: notificationName, object: self)
+        }
     }
     
     @objc func showMainController() {
