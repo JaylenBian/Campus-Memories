@@ -39,6 +39,11 @@
 		E75453A01FB962740082DA13 /* MCUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754539F1FB962740082DA13 /* MCUserProfile.swift */; };
 		E7CC72091FC43E69008E8A28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CC72081FC43E69008E8A28 /* Images.xcassets */; };
 		E7CC720B1FC6AAE0008E8A28 /* MCLoginProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CC720A1FC6AAE0008E8A28 /* MCLoginProfileItem.swift */; };
+		E7CC720D1FC6C90D008E8A28 /* MCProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CC720C1FC6C90D008E8A28 /* MCProfileVC.swift */; };
+		E7CC720F1FC703C1008E8A28 /* MCProfileCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CC720E1FC703C1008E8A28 /* MCProfileCellProvider.swift */; };
+		E7CC72111FC730DE008E8A28 /* MCAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CC72101FC730DE008E8A28 /* MCAboutVC.swift */; };
+		E7CC72131FC7AF27008E8A28 /* MCProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7CC72121FC7AF27008E8A28 /* MCProfileHeaderView.xib */; };
+		E7CC72151FC7AF3B008E8A28 /* MCProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CC72141FC7AF3B008E8A28 /* MCProfileHeaderView.swift */; };
 		E7F86EEC1FB7F92100ECF833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F86EEB1FB7F92100ECF833 /* AppDelegate.swift */; };
 		E7F86EF41FB7F92100ECF833 /* CampusMemories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7F86EF21FB7F92100ECF833 /* CampusMemories.xcdatamodeld */; };
 		E7F86EF61FB7F92100ECF833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F86EF51FB7F92100ECF833 /* Assets.xcassets */; };
@@ -103,6 +108,11 @@
 		E754539F1FB962740082DA13 /* MCUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCUserProfile.swift; sourceTree = "<group>"; };
 		E7CC72081FC43E69008E8A28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7CC720A1FC6AAE0008E8A28 /* MCLoginProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLoginProfileItem.swift; sourceTree = "<group>"; };
+		E7CC720C1FC6C90D008E8A28 /* MCProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCProfileVC.swift; sourceTree = "<group>"; };
+		E7CC720E1FC703C1008E8A28 /* MCProfileCellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCProfileCellProvider.swift; sourceTree = "<group>"; };
+		E7CC72101FC730DE008E8A28 /* MCAboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCAboutVC.swift; sourceTree = "<group>"; };
+		E7CC72121FC7AF27008E8A28 /* MCProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCProfileHeaderView.xib; sourceTree = "<group>"; };
+		E7CC72141FC7AF3B008E8A28 /* MCProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCProfileHeaderView.swift; sourceTree = "<group>"; };
 		E7F86EE81FB7F92100ECF833 /* CampusMemories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMemories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F86EEB1FB7F92100ECF833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F86EF31FB7F92100ECF833 /* CampusMemories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampusMemories.xcdatamodel; sourceTree = "<group>"; };
@@ -339,6 +349,8 @@
 		E75453601FB7FECF0082DA13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7CC72141FC7AF3B008E8A28 /* MCProfileHeaderView.swift */,
+				E7CC72121FC7AF27008E8A28 /* MCProfileHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +358,7 @@
 		E75453611FB7FECF0082DA13 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7CC720E1FC703C1008E8A28 /* MCProfileCellProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +366,8 @@
 		E75453621FB7FECF0082DA13 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7CC720C1FC6C90D008E8A28 /* MCProfileVC.swift */,
+				E7CC72101FC730DE008E8A28 /* MCAboutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -635,6 +650,7 @@
 				E754538A1FB819B70082DA13 /* MCGuidePageCell.xib in Resources */,
 				E754539C1FB923100082DA13 /* README.md in Resources */,
 				E75453741FB7FF430082DA13 /* Discover.storyboard in Resources */,
+				E7CC72131FC7AF27008E8A28 /* MCProfileHeaderView.xib in Resources */,
 				E754539A1FB84B7B0082DA13 /* MCLoginRegisterCell.xib in Resources */,
 				E754536C1FB7FF190082DA13 /* Guide.storyboard in Resources */,
 			);
@@ -817,6 +833,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7CC720D1FC6C90D008E8A28 /* MCProfileVC.swift in Sources */,
 				E754537A1FB80AF20082DA13 /* MCMainTVC.swift in Sources */,
 				E75453901FB82AD60082DA13 /* MCTextField.swift in Sources */,
 				E75453A01FB962740082DA13 /* MCUserProfile.swift in Sources */,
@@ -824,8 +841,11 @@
 				E7F86EF41FB7F92100ECF833 /* CampusMemories.xcdatamodeld in Sources */,
 				E75453991FB84B7B0082DA13 /* MCLoginRegisterCell.swift in Sources */,
 				E754537C1FB80C050082DA13 /* MCMainNVC.swift in Sources */,
+				E7CC72111FC730DE008E8A28 /* MCAboutVC.swift in Sources */,
 				E7F86EEC1FB7F92100ECF833 /* AppDelegate.swift in Sources */,
 				E75453951FB84B390082DA13 /* MCLoginMainCell.swift in Sources */,
+				E7CC72151FC7AF3B008E8A28 /* MCProfileHeaderView.swift in Sources */,
+				E7CC720F1FC703C1008E8A28 /* MCProfileCellProvider.swift in Sources */,
 				E75453891FB819B70082DA13 /* MCGuidePageCell.swift in Sources */,
 				E75453821FB80CDC0082DA13 /* GlobalMacro+URL.swift in Sources */,
 				E75453861FB817270082DA13 /* MCPageItem.swift in Sources */,

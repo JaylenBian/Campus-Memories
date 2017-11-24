@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j3m-KP-KiE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kUW-Uq-D9Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainNVC-->
+        <scene sceneID="C7d-MP-VYG">
+            <objects>
+                <navigationController id="kUW-Uq-D9Q" customClass="MCMainNVC" customModule="CampusMemories" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="REl-6B-2if">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j3m-KP-KiE" kind="relationship" relationship="rootViewController" id="vGf-qe-vd7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mst-cg-Zw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="-167"/>
+        </scene>
+        <!--ProfileVC-->
         <scene sceneID="57c-02-hm7">
             <objects>
-                <viewController id="j3m-KP-KiE" sceneMemberID="viewController">
+                <viewController id="j3m-KP-KiE" customClass="MCProfileVC" customModule="CampusMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gpC-hx-41P"/>
                         <viewControllerLayoutGuide type="bottom" id="WoM-gu-eov"/>
@@ -22,10 +39,119 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dhM-FC-ECW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3P-kh-qH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="-166"/>
+            <point key="canvasLocation" x="312.80000000000001" y="-166.8665667166417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="shd-Je-gkg">
+            <objects>
+                <viewController storyboardIdentifier="sbToProfileEditor" id="DaT-Mw-N82" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9fY-gQ-4hy"/>
+                        <viewControllerLayoutGuide type="bottom" id="PgO-s0-GoY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OKH-hf-c7F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2K-mK-a36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="-167"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="0f2-ci-QRI">
+            <objects>
+                <viewController storyboardIdentifier="sbToAbout" id="Quy-WI-XAJ" customClass="MCAboutVC" customModule="CampusMemories" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SUu-Pc-M20"/>
+                        <viewControllerLayoutGuide type="bottom" id="pB6-b2-ILx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8KO-Mp-h3y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaO-Fy-aJA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Wvp-KA-AdK">
+                                        <rect key="frame" x="147.5" y="64" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="0Bv-ba-mFD"/>
+                                            <constraint firstAttribute="width" constant="80" id="uvf-MF-B08"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="校园微忆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRM-vg-LUA">
+                                        <rect key="frame" x="143" y="184" width="89.5" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="e4c-0o-SVx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 1.0.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW9-Ma-dcq">
+                                        <rect key="frame" x="160" y="221" width="54.5" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="LAo-AY-o8Y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-FH-9Fo">
+                                        <rect key="frame" x="12" y="261" width="351" height="323.5"/>
+                                        <mutableString key="text">	腾讯课堂iOS版是腾讯课堂为用户打造iOS平台上的在线学习的应用。在这里，您可以在线观看大量的精品课程；您可以随时随地地向名师请教；您可以与大量志同道合的同学进行交流。
+	腾讯课堂是腾讯推出的专业在线教育平台，聚合了优质教育机构和教师的海量课程资源。作为开放式的平台，腾讯课堂计划帮助线下教育机构入驻，共同探索在线教育新模式，这无形中又为在线教育O2O增添了几分热度。腾讯课堂凭借QQ客户端的优势，实现在线即时互动教学；并利用QQ积累多年的音视频能力，提供流畅、高音质的课程直播效果；同时支持PPT演示、屏幕分享等多样化的授课模式，还为教师提供白板、提问等能力。 腾讯创建在线教育平台—腾讯课堂，改善了中国教育资源分布和发展不均的现状，依托互联网，打破地域的限制，让每个立志学习，有梦想的人，都能接受优秀老师的指导和教学；同时希望给优秀的机构及教师一个展示的平台。</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015-2017 Minecode.link. All Rights Reserved. Minecode.link版权所有" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1x-q6-Mz9">
+                                        <rect key="frame" x="12" y="612.5" width="351" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="U1x-q6-Mz9" firstAttribute="leading" secondItem="QaO-Fy-aJA" secondAttribute="leading" constant="12" id="5pZ-tE-fbO"/>
+                                    <constraint firstItem="Wvp-KA-AdK" firstAttribute="top" secondItem="QaO-Fy-aJA" secondAttribute="top" constant="64" id="FSh-8H-0Om"/>
+                                    <constraint firstItem="U1x-q6-Mz9" firstAttribute="centerX" secondItem="QaO-Fy-aJA" secondAttribute="centerX" id="GK2-hX-yJT"/>
+                                    <constraint firstAttribute="trailing" secondItem="U1x-q6-Mz9" secondAttribute="trailing" constant="12" id="KAz-cg-m5I"/>
+                                    <constraint firstItem="wRM-vg-LUA" firstAttribute="top" secondItem="Wvp-KA-AdK" secondAttribute="bottom" constant="40" id="Maw-IM-uaZ"/>
+                                    <constraint firstItem="4w0-FH-9Fo" firstAttribute="leading" secondItem="QaO-Fy-aJA" secondAttribute="leading" constant="12" id="NtI-d2-E9U"/>
+                                    <constraint firstItem="rW9-Ma-dcq" firstAttribute="centerX" secondItem="QaO-Fy-aJA" secondAttribute="centerX" id="YX1-lF-URh"/>
+                                    <constraint firstItem="4w0-FH-9Fo" firstAttribute="top" secondItem="rW9-Ma-dcq" secondAttribute="bottom" constant="20" id="Zok-XT-xhj"/>
+                                    <constraint firstItem="Wvp-KA-AdK" firstAttribute="centerX" secondItem="QaO-Fy-aJA" secondAttribute="centerX" id="aSd-7f-oHO"/>
+                                    <constraint firstItem="wRM-vg-LUA" firstAttribute="centerX" secondItem="QaO-Fy-aJA" secondAttribute="centerX" id="dGW-2f-ZXt"/>
+                                    <constraint firstItem="rW9-Ma-dcq" firstAttribute="top" secondItem="wRM-vg-LUA" secondAttribute="bottom" constant="12" id="dfJ-BG-35k"/>
+                                    <constraint firstAttribute="bottom" secondItem="4w0-FH-9Fo" secondAttribute="bottom" constant="40" id="fC0-ff-ZEj"/>
+                                    <constraint firstItem="4w0-FH-9Fo" firstAttribute="height" secondItem="QaO-Fy-aJA" secondAttribute="height" multiplier="0.5" id="uJG-34-6dH"/>
+                                    <constraint firstAttribute="trailing" secondItem="4w0-FH-9Fo" secondAttribute="trailing" constant="12" id="yT7-m0-ajV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pB6-b2-ILx" firstAttribute="top" secondItem="QaO-Fy-aJA" secondAttribute="bottom" id="4ax-9T-z8W"/>
+                            <constraint firstItem="QaO-Fy-aJA" firstAttribute="top" secondItem="SUu-Pc-M20" secondAttribute="bottom" id="LXu-6T-QSj"/>
+                            <constraint firstItem="QaO-Fy-aJA" firstAttribute="leading" secondItem="8KO-Mp-h3y" secondAttribute="leading" id="Udg-Kt-1fW"/>
+                            <constraint firstItem="pB6-b2-ILx" firstAttribute="top" secondItem="U1x-q6-Mz9" secondAttribute="bottom" constant="8" id="Xww-ii-JPj"/>
+                            <constraint firstAttribute="trailing" secondItem="QaO-Fy-aJA" secondAttribute="trailing" id="c2N-pa-QqZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXi-Nx-5z5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="-167.76611694152925"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login_logo" width="246" height="246"/>
+    </resources>
 </document>
