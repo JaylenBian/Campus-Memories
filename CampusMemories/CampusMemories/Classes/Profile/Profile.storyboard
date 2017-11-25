@@ -105,8 +105,8 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-FH-9Fo">
                                         <rect key="frame" x="12" y="261" width="351" height="323.5"/>
-                                        <mutableString key="text">	腾讯课堂iOS版是腾讯课堂为用户打造iOS平台上的在线学习的应用。在这里，您可以在线观看大量的精品课程；您可以随时随地地向名师请教；您可以与大量志同道合的同学进行交流。
-	腾讯课堂是腾讯推出的专业在线教育平台，聚合了优质教育机构和教师的海量课程资源。作为开放式的平台，腾讯课堂计划帮助线下教育机构入驻，共同探索在线教育新模式，这无形中又为在线教育O2O增添了几分热度。腾讯课堂凭借QQ客户端的优势，实现在线即时互动教学；并利用QQ积累多年的音视频能力，提供流畅、高音质的课程直播效果；同时支持PPT演示、屏幕分享等多样化的授课模式，还为教师提供白板、提问等能力。 腾讯创建在线教育平台—腾讯课堂，改善了中国教育资源分布和发展不均的现状，依托互联网，打破地域的限制，让每个立志学习，有梦想的人，都能接受优秀老师的指导和教学；同时希望给优秀的机构及教师一个展示的平台。</mutableString>
+                                        <string key="text">	腾讯课堂iOS版是腾讯课堂为用户打造iOS平台上的在线学习的应用。在这里，您可以在线观看大量的精品课程；您可以随时随地地向名师请教；您可以与大量志同道合的同学进行交流。
+	腾讯课堂是腾讯推出的专业在线教育平台，聚合了优质教育机构和教师的海量课程资源。作为开放式的平台，腾讯课堂计划帮助线下教育机构入驻，共同探索在线教育新模式，这无形中又为在线教育O2O增添了几分热度。腾讯课堂凭借QQ客户端的优势，实现在线即时互动教学；并利用QQ积累多年的音视频能力，提供流畅、高音质的课程直播效果；同时支持PPT演示、屏幕分享等多样化的授课模式，还为教师提供白板、提问等能力。 腾讯创建在线教育平台—腾讯课堂，改善了中国教育资源分布和发展不均的现状，依托互联网，打破地域的限制，让每个立志学习，有梦想的人，都能接受优秀老师的指导和教学；同时希望给优秀的机构及教师一个展示的平台。</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

@@ -10,10 +10,10 @@ import UIKit
 
 class MCAboutVC: UIViewController {
 
+    weak var barImageView: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {

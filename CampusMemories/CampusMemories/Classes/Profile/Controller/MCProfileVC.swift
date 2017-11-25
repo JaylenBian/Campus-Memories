@@ -124,7 +124,7 @@ extension MCProfileVC {
         
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellId")
-            cell?.selectionStyle = .none
+            cell?.selectionStyle = .default
         }
         
         let text = MCProfileCellProvider.shared.dataArr[indexPath.section][indexPath.row]
@@ -137,6 +137,9 @@ extension MCProfileVC {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 让选中状态消失
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let text = MCProfileCellProvider.shared.dataArr[indexPath.section][indexPath.row]
         
         if text == "联系我们" {
