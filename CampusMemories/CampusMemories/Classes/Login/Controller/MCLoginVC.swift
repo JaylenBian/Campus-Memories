@@ -135,12 +135,24 @@ extension MCLoginVC: MCLoginMainCellDelegate {
         let url = api_login + "name=\(profile.nickname)&pass=\(profile.password)"
         
         Alamofire.request(url).responseData { (response) in
-            let json = JSON(response.result.value!)
+            
+            if response.error != nil {
+                SVProgressHUD.showError(withStatus: response.error?.localizedDescription)
+                return
+            }
+            
+            guard let json:JSON = JSON(response.result.value!) else {
+                self.loginFailedHandler()
+                return
+            }
             
             let resultCode = json["code"].stringValue
             
             switch resultCode {
             case "10000":
+                DispatchQueue.global().async {
+                    MCProfileManager.shared.updateUserProfile(json: json["result"]["Customer2"])
+                }
                 self.loginSuccessHandler()
             default:
                 self.loginFailedHandler()

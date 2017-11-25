@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MCProfileVC: MCMainVC, UITableViewDelegate, UITableViewDataSource {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame)
@@ -47,27 +47,24 @@ class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         
         view.addSubview(tableView)
-//        registerCell()
-        addNotification()
-        reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        reloadData()
         self.navigationItem.title = "个人"
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-    }
-    
-    fileprivate func addNotification() {
-        let notificationName = Notification.Name(rawValue: "UserProfileChanged")
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: notificationName, object: nil)
     }
     
     fileprivate func registerCell() {
@@ -99,10 +96,11 @@ class MCProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     // 数据更新时的处理方式
-    @objc func reloadData() {
+    @objc override func reloadData() {
         // 更新profileHeaderCell
         profileHeaderCell?.nicknameLabel.text = MCProfileManager.shared.loadUserProfile()?.nick
         profileHeaderCell?.fansLabel.text = "粉丝数: \(MCProfileManager.shared.loadUserProfile()?.fanscount ?? 0)"
+        
     }
     
     deinit {
@@ -126,6 +124,7 @@ extension MCProfileVC {
         
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellId")
+            cell?.selectionStyle = .none
         }
         
         let text = MCProfileCellProvider.shared.dataArr[indexPath.section][indexPath.row]

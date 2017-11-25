@@ -15,14 +15,14 @@ import SwiftyJSON
 
 @objcMembers class MCUserProfile: NSObject {
     
-    var id: Int?
+    var id: String?
     var name: String?
     var pass: String?
     var sign: String?
     var sex: String?
     var blogcount: Int?
     var school: String?
-    var age: Int?
+    var age: String?
     var qq: String?
     var tel: String?
     var number: String?
@@ -36,7 +36,9 @@ import SwiftyJSON
         super.init()
         
         for (index, object):(String, JSON) in json {
-            setValue(object.rawValue, forKey: index)
+            if object != JSON.null {
+                setValue(object.stringValue, forKey: index)
+            }
         }
     }
     

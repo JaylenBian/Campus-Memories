@@ -30,13 +30,15 @@ class MCMainTVC: UITabBarController {
     }
     
     private func addChildVc(storyName: String, title: String){
-        let childVc = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()!
+        let childVc = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()! as! UINavigationController
         
         childVc.tabBarItem.title = title
         childVc.tabBarItem.image = UIImage(named: "tab_" + storyName + "_normal")
         childVc.tabBarItem.selectedImage = UIImage(named: "tab_" + storyName + "_selected")?.withRenderingMode(.alwaysOriginal)
         //  设置TabBar选中颜色
         childVc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .selected)
+        let notificationName = Notification.Name(rawValue: "UserProfileChanged")
+        NotificationCenter.default.addObserver(childVc.viewControllers.first!, selector: #selector(MCMainVC.reloadData), name: notificationName, object: nil)
         
         addChildViewController(childVc)
     }

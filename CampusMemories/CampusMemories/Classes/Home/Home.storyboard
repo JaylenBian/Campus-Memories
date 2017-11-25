@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EWI-Sx-xLo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pQC-Bs-4Ky">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="V5G-5u-0NE">
+            <objects>
+                <navigationController id="pQC-Bs-4Ky" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fFg-cj-gfD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EWI-Sx-xLo" kind="relationship" relationship="rootViewController" id="fjU-Yw-XXd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FtT-Vu-JRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-850" y="143"/>
+        </scene>
+        <!--HomeVC-->
         <scene sceneID="E8x-x3-a0j">
             <objects>
-                <viewController id="EWI-Sx-xLo" sceneMemberID="viewController">
+                <viewController id="EWI-Sx-xLo" customClass="MCHomeVC" customModule="CampusMemories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wWN-Rx-Fwb"/>
                         <viewControllerLayoutGuide type="bottom" id="xfF-iN-TAL"/>
@@ -20,8 +36,9 @@
                     <view key="view" contentMode="scaleToFill" id="s7H-BM-XmE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.81670464409999999" green="0.64702690969999999" blue="0.29224401709999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NrO-kV-9AV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgy-Ah-tJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -33,7 +33,7 @@ class MCProfileManager {
     func updateUserProfile(json: JSON) {
         userProfile = MCUserProfile(json: json)
         // 发送消息通知所有vc
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             let notificationName = Notification.Name(rawValue: "UserProfileChanged")
             NotificationCenter.default.post(name: notificationName, object: self)
         }
